@@ -282,34 +282,6 @@ nav a:hover::after {
     text-align: center;
 }
 
-.messages-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    margin-top: 3rem;
-}
-
-@media (min-width: 768px) {
-    .messages-content {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-.message-form {
-    background-color: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    flex: 1;
-}
-
-@media (min-width: 768px) {
-    .message-form {
-        max-width: 45%;
-    }
-}
-
 
 .input-field {
     width: 100%;
