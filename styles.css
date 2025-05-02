@@ -51,23 +51,6 @@ img {
 }
 
 /* Botones */
-.btn-primary {
-    background-color: var(--mama-pink);
-    color: var(--foreground);
-    font-weight: 500;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.btn-primary:hover {
-    background-color: var(--mama-pink-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-}
 
 .btn-secondary {
     background-color: var(--mama-purple);
