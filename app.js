@@ -6,10 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inicializar la animación de flores cayendo
   initializeFlowers();
 
-  // Configurar el formulario de mensajes
-  setupMessageForm();
-});
-
 // Función simple de animaciones similares a AOS
 function initializeAOS() {
   const elements = document.querySelectorAll("[data-aos]");
@@ -82,59 +78,6 @@ function initializeFlowers() {
   }
 }
 
-// Configurar el formulario de mensajes
-function setupMessageForm() {
-  const form = document.getElementById("messageForm");
-  const userMessages = document.getElementById("userMessages");
-
-  if (form && userMessages) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Obtener los valores del formulario
-      const name = document.getElementById("name").value;
-      const motherName = document.getElementById("motherName").value;
-      const message = document.getElementById("message").value;
-
-      // Validar los campos
-      if (!name || !motherName || !message) {
-        alert("Por favor complete todos los campos");
-        return;
-      }
-
-      // Crear una nueva tarjeta de mensaje
-      const newMessage = document.createElement("div");
-      newMessage.className = "message-card";
-
-      newMessage.innerHTML = `
-          <h3>Para ${motherName}</h3>
-          <p>"${message}"</p>
-          <span>- ${name}</span>
-        `;
-
-      // Añadir la tarjeta al muro de mensajes
-      userMessages.prepend(newMessage);
-
-      // Efecto visual para el nuevo mensaje
-      setTimeout(() => {
-        newMessage.style.opacity = "0";
-        newMessage.style.transform = "translateY(20px)";
-        newMessage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-
-        setTimeout(() => {
-          newMessage.style.opacity = "1";
-          newMessage.style.transform = "translateY(0)";
-        }, 50);
-      }, 0);
-
-      // Limpiar el formulario
-      form.reset();
-
-      // Mostrar confirmación
-      showToast("¡Mensaje enviado con éxito!");
-    });
-  }
-}
 
 // Función para mostrar toast/notificación
 function showToast(message) {
@@ -175,13 +118,3 @@ function showToast(message) {
 setTimeout(() => {
   showToast("¡Feliz Día de las Madres!");
 }, 1500);
-
-// Botón "Enviar un mensaje" en la sección de bienvenida
-const messageSectionButton = document.querySelector(
-  ".welcome-section .btn-primary"
-);
-if (messageSectionButton) {
-  messageSectionButton.addEventListener("click", function () {
-    document.getElementById("mensajes").scrollIntoView({ behavior: "smooth" });
-  });
-}
