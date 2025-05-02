@@ -258,6 +258,9 @@ nav a:hover::after {
 /* Sección de Mensajes */
 .messages-section {
     padding: 5rem 0;
+    display: grid;
+    justify-content: center;
+    
 }
 
 .messages-section .section-title,
@@ -291,7 +294,7 @@ textarea.input-field {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
-    align-content: start;
+    align-content: center;
 }
 
 @media (min-width: 640px) and (max-width: 767px) {
